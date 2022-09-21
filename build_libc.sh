@@ -27,7 +27,7 @@ do
     tar Jxf glibc-$ver.tar.xz -C /glibc/source
     
     patch /glibc/source/glibc-$ver/malloc/malloc.c
-    patch /glibc/source/glibc-$ver/elf/dl-fini.c
+    #patch /glibc/source/glibc-$ver/elf/dl-fini.c
 
     cd /glibc/source/glibc-$ver && mkdir build && \
         cd build && ../configure --prefix=/glibc/64/$ver --enable-debug=yes CFLAGS="-w -g -O2" && \
