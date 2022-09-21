@@ -1,5 +1,5 @@
 # build_glibc
 
 ```
-docker build -t .
+docker build -t build_glibc .
 ```
