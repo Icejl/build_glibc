@@ -2,7 +2,7 @@
 
 set -xv -o errexit
 
-versions=("2.35","2.39")
+versions=("2.35" "2.39")
 
 mkdir -p /glibc/source && mkdir -p /glibc/32 && mkdir -p /glibc/64
 
