@@ -2,7 +2,7 @@
 
 set -xv -o errexit
 
-versions=("2.27" "2.28" "2.29" "2.30" "2.31" "2.32" "2.33" "2.34" "2.35")
+versions=("2.35","2.39")
 
 mkdir -p /glibc/source && mkdir -p /glibc/32 && mkdir -p /glibc/64
 
@@ -34,9 +34,10 @@ do
         make -j `nproc` && make install -j `nproc`
     rm -rf /glibc/source/glibc-$ver/build
     
-    cd /glibc/source/glibc-$ver && mkdir build32 && \
-        cd build32 && ../configure --prefix=/glibc/32/$ver --enable-debug=yes CFLAGS="-g -O2 -march=i686" CC="gcc -m32" --host=i686-linux-gnu && \
-        make -j `nproc` && make install -j `nproc`
+    # build 32 bit
+    #cd /glibc/source/glibc-$ver && mkdir build32 && \
+    #    cd build32 && ../configure --prefix=/glibc/32/$ver --enable-debug=yes CFLAGS="-g -O2 -march=i686" CC="gcc -m32" --host=i686-linux-gnu && \
+    #    make -j `nproc` && make install -j `nproc`
     rm -rf /glibc/source/glibc-$ver/build32
 done
 

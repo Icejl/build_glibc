@@ -1,0 +1,12 @@
+version: "1.0"
+services:
+  pwn:
+    build: 
+      context: .          
+      dockerfile: Dockerfile  
+    image: build_glibc     
+    container_name: build_glibc
+    volumes:
+      - /glibc:/glibc    
+    entrypoint:
+      - "/root/build_libc.sh"
